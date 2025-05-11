@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1 style="text-align:center;">Admin Dashboard</h1>
+
+  <!-- Add Job Form -->
+  <section class="admin-section">
+    <h2>Add New Job</h2>
+    <form action="add_job.php" method="POST">
+      <input name="title" placeholder="Job Title" required>
+      <textarea name="description" placeholder="Description" required></textarea>
+      <input name="company" placeholder="Company" required>
+      <input name="location" placeholder="Location" required>
+      <input name="salary" placeholder="Salary (e.g. 8 LPA)" required>
+      <input name="category" placeholder="Category (e.g. Developer)" required>
+      <button type="submit">Add Job</button>
+    </form>
+  </section>
+
+  <!-- View Job Listings -->
+  <section class="admin-section">
+    <h2>All Job Listings</h2>
+    <!-- Populate from DB in PHP -->
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Company</th>
+          <th>Location</th>
+          <th>Salary</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Example row -->
+        <tr>
+          <td>UI/UX Designer</td>
+          <td>Infosys</td>
+          <td>Pune</td>
+          <td>6.5 LPA</td>
+          <td><form method="POST" action="delete_job.php"><input type="hidden" name="job_id" value="1"><button>Delete</button></form></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Applicants List -->
+  <section class="admin-section">
+    <h2>Applicants List</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>User Name</th>
+          <th>Email</th>
+          <th>Job Title</th>
+          <th>Resume</th>
+          <th>Applied On</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Example row -->
+        <tr>
+          <td>Rahul</td>
+          <td>rahul@example.com</td>
+          <td>Backend Developer</td>
+          <td><a href="#">View Resume</a></td>
+          <td>2025-05-01</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</body>
+</html>
